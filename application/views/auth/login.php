@@ -94,17 +94,17 @@
 						<h4 class="modal-title">Perpustakaan Ku</h4>
 					</div>
 					<div class="modal-body">
-						<form action="#" method="post">
+						<form action="login" role="form" method="post">
 							<div class="form-group">
 								<i class="fa fa-user"></i>
-								<input type="text" class="form-control" placeholder="Username" required="required">
+								<input type="text" class="form-control" name="username" placeholder="Username" required="required">
 							</div>
 							<div class="form-group">
 								<i class="fa fa-lock"></i>
-								<input type="password" class="form-control" placeholder="Password" required="required">					
+								<input type="password" class="form-control" name="password" placeholder="Password" required="required">					
 							</div>
 							<div class="form-group">
-								<input type="submit" class="btn btn-primary btn-block btn-lg" value="Masuk">
+								<input type="submit" name="login" class="btn btn-primary btn-block btn-lg" value="Masuk">
 							</div>
 						</form>
 					</div>

@@ -50,9 +50,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['register']['get'] = 'auth/register';
+$route['register']['post'] = 'auth/post_register';
 $route['login']['get'] = 'auth/login';
+$route['login']['post'] = 'auth/post_login';
+$route['logout'] = 'auth/logout';
+
+$route['default_controller'] = 'book/index';
+$route['book'] = 'book/index';
+$route['book_create'] = 'book/create';
+$route['book_create_post']  = 'book/book_create';
+$route['book_update/(:num)'] = 'book/book_update/$1';
+$route['book_update_data'] = 'book/book_update_data';
+$route['book_delete/(:num)'] = 'book/book_delete/$1';
+
+$route['book_category'] = 'bookcategory/index';
+$route['book_category_create'] = 'bookcategory/create';
+$route['book_category_create_post'] = 'bookcategory/book_category_create';
+
+$route['admin']['get'] = 'admin/index';
+
