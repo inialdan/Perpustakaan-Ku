@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
+		<title>Input Buku</title>
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/css.css?family=Roboto|Varela+Round">
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -104,7 +104,11 @@
 							</div>
 							<div class="form-group">
 								<i class="fa fa-list"></i>
-								<input type="text" class="form-control" name="jenis_buku" placeholder="Jenis Buku" required="required">					
+								<select class="form-control" aria-label="Default select example" name="jenis_buku">
+									<?php foreach($book_category as $data) : ?>
+										<option value="<?= $data->id?>"><?= $data->jenis ?></option>
+									<?php endforeach; ?>
+								</select>
 							</div>
 							<div class="form-group">
 								<input type="submit" name="book_create" class="btn btn-primary btn-block btn-lg" value="Simpan">

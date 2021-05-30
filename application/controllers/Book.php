@@ -12,6 +12,7 @@
 			$this->load->helper(array('form', 'url'));
 			$this->load->model("UserModel");
 			$this->load->model("BookModel");
+			$this->load->model("BookCategoryModel");
 			
 			if($this->session->userdata("login") == null && $this->session->userdata("admin") != true){
 				redirect(base_url('login'));
@@ -30,7 +31,11 @@
 		}
 
 		public function create(){
-			$this->load->view('book/create');
+			$data = [
+				"book_category" => $this->BookCategoryModel->findAll(),
+			];
+
+			$this->load->view('book/create', $data);
 		}
 
 		public function book_create(){
@@ -64,6 +69,7 @@
 
 			$data = [
 				"book" => $this->user = $this->BookModel->findOne("id", $id),
+				"book_category" => $this->BookCategoryModel->findAll(),
 			];
 			 
 			$this->load->view('book/edit', $data);

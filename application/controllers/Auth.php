@@ -85,10 +85,10 @@
 						redirect(base_url('book'));
 					}
 					else{
-						redirect(base_url('home'));
+						$this->session->set_userdata(["admin" => false]);
+						redirect(base_url('book_list'));
 					}
-				}
-				else{
+				}else{
 					echo"
 					<script>
 						alert('Password salah');

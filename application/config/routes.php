@@ -70,6 +70,12 @@ $route['book_delete/(:num)'] = 'book/book_delete/$1';
 $route['book_category'] = 'bookcategory/index';
 $route['book_category_create'] = 'bookcategory/create';
 $route['book_category_create_post'] = 'bookcategory/book_category_create';
+$route['book_category_update/(:num)'] = 'bookcategory/book_category_update/$1';
+$route['book_category_update_data'] = 'bookcategory/book_category_update_data';
+$route['book_category_delete/(:num)'] = 'bookcategory/book_category_delete/$1';
+
+
+$route['book_list'] = 'booklist/index';
 
 $route['admin']['get'] = 'admin/index';
 

@@ -2,23 +2,16 @@
 
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class BookModel extends CI_Model {
+    class BookCategoryModel extends CI_Model {
 
-        private $table = "buku";
+        private $table = "jenis_buku";
 
         public function findOne($col, $val){
             return $this->db->get_where($this->table, [$col => $val])->row();
         }
         
         public function findAll(){
-            return $this->db->query(
-                    "SELECT 
-                        buku.id, buku.cover, buku.nama_buku, jenis_buku.jenis, buku.created_by, buku.created_on
-                    FROM buku AS buku 
-                    LEFT JOIN jenis_buku AS jenis_buku
-                    ON buku.jenis_buku = jenis_buku.id 
-                    ORDER BY buku.id ASC"
-                )->result();
+            return $this->db->get($this->table)->result();
         }
         
         public function create($data){

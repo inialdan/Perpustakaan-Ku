@@ -1,11 +1,14 @@
 <?php
+
 	defined('BASEPATH') OR exit('No direct script access allowed');
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 
-		<title>Perpustakaan Ku - Registrasi</title>
+		<title>Input Jenis Buku</title>
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/css.css?family=Roboto|Varela+Round">
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -89,40 +92,24 @@
 	<body>
 		<!-- Modal HTML -->
 		<div>
-			<div class="modal-dialog modal-login" style="margin-top: 5%">
+			<div class="modal-dialog modal-login" style="margin-top: 10%">
 				<div class="modal-content">
 					<div class="modal-header">				
-						<h4 class="modal-title">Registrasi Perpustakaan Ku</h4>
+						<h4 class="modal-title">Input Data Jenis Buku</h4>
 					</div>
 					<div class="modal-body">
-						<form action="register" role="form" method="post">
+						<form action="<?= base_url() ?>book_category_create_post" role="form" method="post">
 							<div class="form-group">
-								<i class="fa fa-at"></i>
-								<input type="text" name="username" class="form-control" placeholder="Username" required="required">
+								<i class="fa fa-list"></i>
+								<input type="text" class="form-control" name="jenis_buku" placeholder="Jenis Buku" required="required">					
 							</div>
 							<div class="form-group">
-								<i class="fa fa-user"></i>
-								<input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required="required">
-							</div>
-							<div class="form-group">
-								<i class="fa fa-envelope"></i>
-								<input type="email" name="email" class="form-control" placeholder="Alamat Email" required="required">
-							</div>
-							<div class="form-group">
-								<i class="fa fa-lock"></i>
-								<input type="password" name="password" class="form-control" placeholder="Password" required="required">					
-							</div>
-							<div class="form-group">
-								<i class="fa fa-lock"></i>
-								<input type="password" name="repassword" class="form-control" placeholder="Ulangi Password" required="required">					
-							</div>
-							<div class="form-group">
-								<input type="submit" name="register" class="btn btn-primary btn-block btn-lg" value="Masuk">
+								<input type="submit" name="book_category_create" class="btn btn-primary btn-block btn-lg" value="Simpan">
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<a href="login">Sudah punya Akun?</a>
+						<a href="<?= base_url() ?>book_category">Lihat Data</a>
 					</div>
 				</div>
 			</div>

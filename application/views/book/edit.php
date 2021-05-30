@@ -7,6 +7,7 @@
 <html lang="en">
 	<head>
 
+		<title>Edit Buku</title>
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/css.css?family=Roboto|Varela+Round">
 		<link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,10 +92,10 @@
 	<body>
 		<!-- Modal HTML -->
 		<div>
-			<div class="modal-dialog modal-login" style="margin-top: 10%">
+			<div class="modal-dialog modal-login" style="margin-top: 3%">
 				<div class="modal-content">
 					<div class="modal-header">				
-						<h4 class="modal-title">Input Data Buku</h4>
+						<h4 class="modal-title">Edit Data Buku</h4>
 					</div>
 					<div class="modal-body">
 						<form action="<?= base_url() ?>/book_update_data" role="form" method="post" enctype="multipart/form-data">
@@ -115,7 +116,17 @@
 							</div>
 							<div class="form-group">
 								<i class="fa fa-list"></i>
-								<input type="text" class="form-control" name="jenis_buku" placeholder="Jenis Buku" value="<?= $book->jenis_buku ?>" required="required">					
+								
+								<i class="fa fa-list"></i>
+								<select class="form-control" aria-label="Default select example" name="jenis_buku">
+									<?php foreach($book_category as $data) : ?>
+										<?php if($book->jenis_buku == $data->id){ ?>
+											<option value="<?= $data->id?>" selected><?= $data->jenis ?></option>
+										<?php }else {?>
+											<option value="<?= $data->id?>"><?= $data->jenis ?></option>
+										<?php }?>
+									<?php endforeach; ?>
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="customFile">Pilih Gambar :</label>
