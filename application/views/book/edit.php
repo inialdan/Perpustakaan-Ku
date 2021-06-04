@@ -122,7 +122,7 @@
 									<?php foreach($book_category as $data) : ?>
 										<?php if($book->jenis_buku == $data->id){ ?>
 											<option value="<?= $data->id?>" selected><?= $data->jenis ?></option>
-										<?php }else {?>
+										<?php } else {?>
 											<option value="<?= $data->id?>"><?= $data->jenis ?></option>
 										<?php }?>
 									<?php endforeach; ?>
