@@ -117,7 +117,7 @@
 								<input type="password" name="repassword" class="form-control" placeholder="Ulangi Password" required="required">					
 							</div>
 							<div class="form-group">
-								<input type="submit" name="register" class="btn btn-primary btn-block btn-lg" value="Masuk">
+								<input type="submit" name="register" class="btn btn-primary btn-block btn-lg" value="Daftar">
 							</div>
 						</form>
 					</div>
